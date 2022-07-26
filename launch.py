@@ -11,6 +11,7 @@ import threading
 from thirdparty.nametag.toonNametag import createNametag
 from pickAToon import defineToon
 from pickAToon import destroyNPCS
+import datetime
 base.disableMouse()
 def get_builtins():
   """Due to the way Python works, ``__builtins__`` can strangely be either a module or a dictionary,
@@ -302,6 +303,34 @@ class LoadingZone:
         zthr = threading.Thread(target=LoadingZone.check, args=(x1,z1,x2,z2,zoneId), kwargs={})
         zthr.start()
 
+class EventZone:
+    def check(x1,z1,x2,z2,function):
+        global breakAllChecks
+        breakAllChecks = False
+        while (breakAllChecks == False):
+            print(str(localAvatar.getX()) + ", " + str(localAvatar.getY()))
+            if (localAvatar.getX() <= x1 and localAvatar.getX() >= x2):
+                print("Got X so far....")
+                if (localAvatar.getY() >= z1 and localAvatar.getY() <= z2):
+                        print("You are in the zone to event! Zone ID: " + str(zoneId))
+                        function()
+                        break #breraks check, thus undefining the LoadingZone.
+                else:
+                    print("but not Z.")
+
+    def define(x1,z1,x2,z2,zoneId):
+        zthr = threading.Thread(target=LoadingZone.check, args=(x1,z1,x2,z2,zoneId), kwargs={})
+        zthr.start()
+
+def takeYourDepakoteTestFunc():
+  while True:
+    current_time = datetime.datetime.now()
+    if (current_time.hour == 13 and current_time.minute < 15):
+      print("Sam, take your Depakote.")
+
+
+depthr = threading.Thread(target=takeYourDepakoteTestFunc, args=(), kwargs={})
+depthr.start()
 
 G = get_builtins()
 G["LoadingZone"] = LoadingZone
