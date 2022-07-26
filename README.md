@@ -1,5 +1,5 @@
 # Toontown Ceiling
-Like Toontown House, but more nerdy... 😃
+Like Toontown House, but more nerdy and open... 😃
 
 ## Credits:
 
