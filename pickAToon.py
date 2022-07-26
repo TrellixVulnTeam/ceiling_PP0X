@@ -1,0 +1,29 @@
+from thirdparty.createToon.src.toon.CeilingToon import Toon 
+toonArray = [['mi', 'ss', False, 'ss', 'l', 'Blue', 'Red', 'Green', 'Red', '2019 Winter Laff-o-lympics Gold Medal', 'Beta Bug Hunter Shorts', 'Beta Bug Hunter Skirt', 'Amber', 'Aqua', None, None, 4, None, None, None, 'Neutral', True, False], ['ca', 'ls', False, 'ls', 'l', 'Cartoonival Blue', 'Cartoonival Blue', 'White', 'Cartoonival Blue', '2019 Winter Laff-o-lympics Bronze Medal', 'Bee Shorts', None, 'Amber', 'White', None, 'Aviator Shades', 1, None, None, 'Aqua Toon Boots', 'Neutral', True, False],['cr', 'ss', False, 'sd', 'm', 'Amber', 'Cartoonival Blue', 'White', 'Cartoonival Blue', None, None, None, 'White', 'White', None, None, 4, None, None, None, 'Neutral', True, False],['ri', 'ls', False, 'ss', 's', 'Black', 'Cartoonival Blue', 'White', 'Cartoonival Blue', None, None, None, 'White', 'White', None, None, 4, None, None, None, 'Neutral', True, False]] # Define your toons here! Each one should be it's own array nested inside instead of a Toon object.
+npcArray = []
+dummyNode = render.attach_new_node("DummyNode");
+
+def getToon(array):
+    return Toon(*array)
+
+def createNPC(dnaArray,x,y,z,h,p,r):
+    npc = Toon(*dnaArray)
+    npc.toonActor.setPos(x,y,z)
+    npc.toonActor.setHpr(h,p,r)
+    npcArray.append(npc)
+    npc.toonActor.reparentTo(render)
+    return npc 
+
+def destroyNPCS():
+    for element in npcArray:
+        element.toonActor.detach_node()
+
+def pickAToon(num):
+    global pickedToonArray
+    pickedToonArray = toonArray[num]
+    return getToon(pickedToonArray)
+    
+def defineToon():
+    return pickAToon(2) #define what toon to be, starting at 0
+ 
+

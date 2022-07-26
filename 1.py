@@ -1,0 +1,18 @@
+from pickAToon import createNPC
+
+currentLand.currentLandModels[zones[zID]] = loader.loadModel('phase_4/models/neighborhoods/toontown_central_full.bam')
+currentLand.currentLandModels[zones[zID]].reparentTo(render)
+# Note for further creation: reparent everything after mainland to currentLand.currentLandModels[zones[zID]]
+currentLand.currentLandModels[zones[zID]].setPos(0, 0, 0)
+base.localAvatar.setPos(0,0,0)
+
+breakAllChecks = False
+G = get_builtins()
+LoadingZone = G["LoadingZone"]
+createNPC(['mi', 'ss', False, 'ss', 'l', 'Blue', 'Red', 'Green', 'Red', '2019 Winter Laff-o-lympics Gold Medal', 'Beta Bug Hunter Shorts', 'Beta Bug Hunter Skirt', 'Amber', 'Aqua', None, None, 4, None, None, None, 'Neutral', True, False],50,-3,4,93,0,0)
+LoadingZone.define(-146.117, -4.0677, -153.27, 12.1799, 0)
+LoadingZone.define(-38.3287, 91.7318,-53.18, 101.799, 2)
+LoadingZone.define(34.5333, -163.679, 24.6789, -148.533, 3)
+LoadingZone.define(35.5112, 158.154, 21.1569, 161.036, 4)
+LoadingZone.define(-127.328, -80.7726, -140.133, -56.2604, 6)
+
