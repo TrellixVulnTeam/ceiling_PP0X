@@ -33,6 +33,6 @@ def pickAToon(num):
     return getToon(pickedToonArray)
     
 def defineToon():
-    return pickAToon(2) #define what toon to be, starting at 0
+    return pickAToon(3) #define what toon to be, starting at 0
  
 
