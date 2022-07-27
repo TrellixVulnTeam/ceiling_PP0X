@@ -11,13 +11,9 @@ import threading
 from thirdparty.nametag.toonNametag import createNametag
 from pickAToon import defineToon
 from pickAToon import destroyNPCS
+from pickAToon import get_builtins
 import datetime
 base.disableMouse()
-def get_builtins():
-  """Due to the way Python works, ``__builtins__`` can strangely be either a module or a dictionary,
-  depending on whether the file is executed directly or as an import. I couldn’t care less about this
-  detail, so here is a method that simply returns the namespace as a dictionary."""
-  return getattr( __builtins__, '__dict__', __builtins__ )
 
 zones = ["Melodyland", "The Central", "Docks", "Garden", "Speedway", "Sellbot HQ Past 2021", "Test Trolley Game"]
 # 0 is mml, 1 is ttc, 2 is dd, 3 is garden, 4 is speedway, 5 is sbhq2021, 6 is TestTrolley.
@@ -47,7 +43,7 @@ duckBody = toon.toonActor
  
 gloves = duckBody.findAllMatches('**/hands')
 ears = duckBody.findAllMatches('**/*ears*')
-head = duckBody.findAllMatches('**/head-*')
+head = duckBody.findAllMatches('**/head*')
 sleeves = duckBody.findAllMatches('**/sleeves')
 shirt = duckBody.findAllMatches('**/torso-top')
 shorts = duckBody.findAllMatches('**/torso-bot')
@@ -61,10 +57,12 @@ bodyNodes += [gloves]
 bodyNodes += [head, ears]
 bodyNodes += [sleeves, shirt, shorts]
 bodyNodes += [neck, arms, legs, feet]
- 
-#nametag = createNametag("Poodletooth", (1,1,1,.5), (0,0,1,1))
-#nametag.setPos(0,0,2)
-#nametag.reparentTo(head[0])
+
+
+G = get_builtins()
+nametag = createNametag(G["PlayerName"], (1,1,1,.5), (0,0,1,1))
+nametag.setPos(0,0,2)
+nametag.reparentTo(head[0])
 
 topTex = loader.loadTexture('phase_3/maps/desat_shirt_5.jpg')
 botTex = loader.loadTexture('phase_4/maps/CowboyShorts1.jpg')
@@ -332,7 +330,7 @@ def takeYourDepakoteTestFunc():
 depthr = threading.Thread(target=takeYourDepakoteTestFunc, args=(), kwargs={})
 depthr.start()
 
-G = get_builtins()
+
 G["LoadingZone"] = LoadingZone
 
 
