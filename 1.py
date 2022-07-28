@@ -13,3 +13,9 @@ LoadingZone.define(34.5333, -163.679, 24.6789, -148.533, 3)
 LoadingZone.define(35.5112, 158.154, 21.1569, 161.036, 4)
 LoadingZone.define(-127.328, -80.7726, -140.133, -56.2604, 6)
 LoadingZone.define(112.26, -3.75061, 105.029, 8.132, 7)
+
+G["music"].stop()
+G["music"] = loader.loadSfx('phase_4/audio/bgm/TC_nbrhood.ogg')
+G["music"].setLoop(True)
+G["music"].play()
+

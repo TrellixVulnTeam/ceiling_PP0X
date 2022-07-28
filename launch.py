@@ -64,9 +64,9 @@ nametag = createNametag(G["PlayerName"], (1,1,1,.5), (0,0,1,1))
 nametag.setPos(0,0,2)
 nametag.reparentTo(head[0])
 
-music = loader.loadSfx('phase_3/audio/bgm/tt_theme.ogg')
-music.setLoop(True)
-music.play()
+G["music"] = loader.loadSfx('phase_3/audio/bgm/tt_theme.ogg')
+G["music"].setLoop(True)
+G["music"].play()
 
 topTex = loader.loadTexture('phase_3/maps/desat_shirt_5.jpg')
 botTex = loader.loadTexture('phase_4/maps/CowboyShorts1.jpg')
