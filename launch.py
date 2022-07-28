@@ -262,6 +262,7 @@ base.localAvatar = localAvatar
 
 global zID
 zID = 1
+G["pZID"] = zID
 class currentLand:
     currentLandModels = {}
 
@@ -295,6 +296,7 @@ class LoadingZone:
                 if (localAvatar.getY() >= z1 and localAvatar.getY() <= z2):
                         print("You are in the zone to zone! Zone ID: " + str(zoneId))
                         currentLand.currentLandModels[zones[zID]].removeNode()
+                        G["pZID"] = zID
                         zID = zoneId
                         loadZone(zID)
                         break #breraks check, thus undefining the LoadingZone.
