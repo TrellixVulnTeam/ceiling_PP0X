@@ -317,7 +317,6 @@ class EventZone:
                 print("Got X so far....")
                 if (localAvatar.getY() >= z1 and localAvatar.getY() <= z2):
                         print("You are in the zone to event! Zone ID: " + str(zoneId))
-                        function()
                         break #breraks check, thus undefining the LoadingZone.
                 else:
                     print("but not Z.")
