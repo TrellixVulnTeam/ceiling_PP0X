@@ -24,7 +24,8 @@ G["music"].play()
 def sleepThenBackToPlayground():
     import time
     time.sleep(43)
-    loadZone(G["pZID"])
+    #loadZone(G["pZID"])
+    loadZone(1)
 
 pgthr = threading.Thread(target=sleepThenBackToPlayground, args=(), kwargs={})
 pgthr.start()

@@ -64,7 +64,7 @@ nametag = createNametag(G["PlayerName"], (1,1,1,.5), (0,0,1,1))
 nametag.setPos(0,0,2)
 nametag.reparentTo(head[0])
 
-G["music"] = loader.loadSfx('phase_3/audio/bgm/tt_theme.ogg')
+G["music"] = loader.loadSfx('phase_3/audio/bgm/ttr_theme_aprilfools.ogg')
 G["music"].setLoop(True)
 G["music"].play()
 
