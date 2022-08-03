@@ -1,5 +1,9 @@
 # Toontown Ceiling
 Like Toontown House, but more nerdy and open... 😃
+A paranormal early build of a Toontown private server.
+
+# WARNING!
+THIS IS A CREEPY PASTA GAME.
 
 ## Credits:
 
