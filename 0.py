@@ -10,6 +10,6 @@ global isCurrentZone
 isCurrentZone = True
 
 G["music"].stop()
-G["music"] = loader.loadSfx('phase_6/audio/bgm/MM_nbrhood.ogg')
+G["music"] = loader.loadSfx('phase_6/audio/bgm/WW_nbrhood.ogg')
 G["music"].setLoop(True)
 G["music"].play()

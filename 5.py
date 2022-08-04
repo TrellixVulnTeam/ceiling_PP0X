@@ -22,7 +22,7 @@ currentLand.currentLandModels[zones[zID]].setHpr(360,0,0)
 currentLand.currentLandModels[zones[zID]].setScale(1)
 
 G["music"].stop()
-G["music"] = loader.loadSfx('phase_9/audio/bgm/CHQ_FACT_bg.ogg')
+G["music"] = loader.loadSfx('phase_9/audio/bgm/PLEASEDONTMAKEMEGOSADAGAIN.ogg')
 G["music"].setLoop(True)
 G["music"].play()
 

@@ -11,6 +11,6 @@ LoadingZone = G["LoadingZone"]
 LoadingZone.define(3.6083, -1.4502, -14.5347, 9.84779, 5)
 
 G["music"].stop()
-G["music"] = loader.loadSfx('phase_8/audio/bgm/DG_nbrhood.ogg')
+G["music"] = loader.loadSfx('phase_6/audio/bgm/GARDEN_nbrhood.ogg')
 G["music"].setLoop(True)
 G["music"].play()

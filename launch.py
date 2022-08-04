@@ -13,7 +13,14 @@ from pickAToon import defineToon
 from pickAToon import destroyNPCS
 from pickAToon import get_builtins
 import datetime
+import asyncio
 base.disableMouse()
+
+
+G = get_builtins()
+G["music"] = loader.loadSfx('phase_3/audio/bgm/c_theme.ogg')
+G["music"].setLoop(True)
+G["music"].play()
 
 zones = ["Melodyland", "The Central", "Docks", "Garden", "Speedway", "Sellbot HQ Past 2021", "Test Trolley Game", "Toon Hall"]
 # 0 is mml, 1 is ttc, 2 is dd, 3 is garden, 4 is speedway, 5 is sbhq2021, 6 is TestTrolley, 7 is Toon Hall.
@@ -58,15 +65,9 @@ bodyNodes += [head, ears]
 bodyNodes += [sleeves, shirt, shorts]
 bodyNodes += [neck, arms, legs, feet]
 
-
-G = get_builtins()
 nametag = createNametag(G["PlayerName"], (1,1,1,.5), (0,0,1,1))
 nametag.setPos(0,0,2)
 nametag.reparentTo(head[0])
-
-G["music"] = loader.loadSfx('phase_3/audio/bgm/ttr_theme_aprilfools.ogg')
-G["music"].setLoop(True)
-G["music"].play()
 
 topTex = loader.loadTexture('phase_3/maps/desat_shirt_5.jpg')
 botTex = loader.loadTexture('phase_4/maps/CowboyShorts1.jpg')

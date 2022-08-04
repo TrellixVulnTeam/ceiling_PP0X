@@ -4,6 +4,6 @@ currentLand.currentLandModels[zones[zID]].setPos(0, 0, 0)
 base.localAvatar.setPos(0,0,0)
 
 G["music"].stop()
-G["music"] = loader.loadSfx('phase_6/audio/bgm/DD_nbrhood.ogg')
+G["music"] = loader.loadSfx('phase_6/audio/bgm/DOCKS.ogg')
 G["music"].setLoop(True)
 G["music"].play()
