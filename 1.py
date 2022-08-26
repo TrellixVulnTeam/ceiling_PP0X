@@ -19,3 +19,4 @@ G["music"] = loader.loadSfx('phase_4/audio/bgm/TC_nbrhood.ogg')
 G["music"].setLoop(True)
 G["music"].play()
 
+# hello from code-server on iPad
